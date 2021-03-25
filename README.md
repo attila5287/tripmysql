@@ -2,13 +2,14 @@
 |---|---|
  ![h](https://raw.githubusercontent.com/attila5287/img_readme/main/all/h.png  "globe") | [tripmysql.herokuapp.com](http://tripmysql.herokuapp.com/)
 
+![][3]
+
 ```
 > Create an account.
 > Create a new trip using a location from a list.
 > Create and view location data.
 > View all of the trips along with their locations.
 ```
-
 |---|TODO|
 |---|---|
 |![chk][1]|create schema (manual), create tables (auto by init), DB relations/foreign keys|
@@ -68,4 +69,6 @@ DELETE  | `/api/trips/:id`| removes a trip and returns a successful response in 
 [1]: https://raw.githubusercontent.com/attila5287/img_readme/main/all/checkbox1.png
 
 [2]: https://raw.githubusercontent.com/attila5287/img_readme/main/all/sql-icon.png
+
+[3]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/first_response.JPG
 

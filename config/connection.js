@@ -9,8 +9,9 @@ const sequelize = new Sequelize(
 		host: "localhost",
 		dialect: "mysql",
 		port: 3306,
-		password: 1234
 	}
 );
+
+console.log("\n\npassword :>> ", process.env.DB_PASSWORD);
 
 module.exports = sequelize;

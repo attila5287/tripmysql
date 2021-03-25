@@ -13,3 +13,4 @@ Location.hasMany(Trip, {
 });
 
 module.exports = { Traveller, Location, Trip };
+// test

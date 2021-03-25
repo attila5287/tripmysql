@@ -2,15 +2,22 @@ const Traveller = require("./Traveller");
 const Location = require("./Location");
 const Trip = require("./Trip");
 
-Traveller.hasMany(Trip, {
-	foreignKey: "traveller_id",
-	onDelete: "CASCADE"
+Traveller.belongsToMany(Location, {
+	through: {
+		model: Trip,
+		unique: false
+	},
+	as: "trips_togo"
 });
 
-Location.hasMany(Trip, {
-	foreignKey: "location_id",
-	onDelete: "CASCADE"
+Location.belongsToMany(Traveller, {
+	through: {
+		model: Trip,
+		unique: false
+	},
+	as: "trippers_tobe"
 });
+
+console.log("\n >> Finalizing DB:\n\t relational database set up! ");
 
 module.exports = { Traveller, Location, Trip };
-// test

@@ -16,15 +16,16 @@ Trip.init(
 			defaultValue: 1
 		},
 		trip_budget: {
-			type: DataTypes.INTEGER,
-			defaultValue: 0
+			type: DataTypes.DECIMAL(10, 2),
+			allowNull: true
 		},
 		// Foreign Key
 		traveller_id: {
 			type: DataTypes.INTEGER,
 			references: {
 				model: "traveller",
-				key: "id"
+				key: "id",
+				unique: false
 			}
 		},
 		// Foreign Key
@@ -32,7 +33,8 @@ Trip.init(
 			type: DataTypes.INTEGER,
 			references: {
 				model: "location",
-				key: "id"
+				key: "id",
+				unique: false
 			}
 		}
 	},

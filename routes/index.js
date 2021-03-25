@@ -4,7 +4,7 @@ const router = require('express').Router();
 const { Location, Traveller, Trip } = require("../models");
     
 
-// HOME PAGE
+// LANDING
 router.get("/", async (req, res) => {
 	try {
 		const locationData = await Location.findAll();

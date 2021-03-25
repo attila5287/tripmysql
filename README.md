@@ -9,10 +9,16 @@
 > View all of the trips along with their locations.
 ```
 
+|---|TODO|
+|---|---|
+|![chk][1]|create schema (manual), create tables (auto by init), DB relations/foreign keys|
+|![chk][1]|insert demo locations (man.) for landing page '/'|
+|![chk][0]|run seed.js? access denied? manual|
+|![chk][0]| JawsDB add-on + Env vars for heroku|
+
+
 ![sql](https://raw.githubusercontent.com/attila5287/img_readme/main/all/sql-icon.png  "sql") DB Models
 ======
-
-
 
 |Traveller|Fields|
 |--- |---|
@@ -25,8 +31,8 @@
 **Trip**|Fields|
 |---|---|
 |![chk][1]|`id`: primary key, `trip_budget`, `traveller_amount`
-|![chk][0]| `traveller_id`: FK (`Traveller.id`)
-|![chk][0]| `location_id`: FK (`Location.id`)
+|![chk][1]| `traveller_id`: FK (`Traveller.id`)
+|![chk][1]| `location_id`: FK (`Location.id`)
 
 
 ![chk](https://raw.githubusercontent.com/attila5287/img_readme/main/all/routing.png) |URL|Logic|

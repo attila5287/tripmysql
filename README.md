@@ -1,14 +1,13 @@
-![globe](https://raw.githubusercontent.com/attila5287/img_readme/main/all/globe_bw.png  "globe") TripMySQL
-======
-# ![h](https://raw.githubusercontent.com/attila5287/img_readme/main/all/h.png  "globe") [tripmysql.herokuapp.com](http://tripmysql.herokuapp.com/)
-```
-create an account.
-create a new trip using a location from a list.
-create and view location data.
-view all of the trips along with their locations.
-```
+![globe](https://raw.githubusercontent.com/attila5287/img_readme/main/all/globe_bw.png  "globe")| `TripMySQL`
+|---|---|
+ ![h](https://raw.githubusercontent.com/attila5287/img_readme/main/all/h.png  "globe") | [tripmysql.herokuapp.com](http://tripmysql.herokuapp.com/)
 
-
+```
+> Create an account.
+> Create a new trip using a location from a list.
+> Create and view location data.
+> View all of the trips along with their locations.
+```
 
 ![sql](https://raw.githubusercontent.com/attila5287/img_readme/main/all/sql-icon.png  "sql") DB Models
 ======

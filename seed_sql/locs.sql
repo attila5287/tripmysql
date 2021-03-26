@@ -1,9 +1,9 @@
-use trips;
+-- jaws db name
 
-INSERT INTO location
-    (location_name)
+INSERT INTO z802j505xcs4tyz4.location
+    (id, location_name)
   VALUES
-    ('Istanbul'),
-    ('Izmir'),
-    ('Ankara'),
+    (1, 'Istanbul'),
+    (2, 'Izmir'),
+    (3, 'Ankara')
     ;

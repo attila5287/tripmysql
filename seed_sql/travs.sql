@@ -1,5 +1,5 @@
 
-INSERT INTO traveller
+INSERT INTO z802j505xcs4tyz4.traveller
     (id, 'name', 'email' )
   VALUES
     (1,'Attila', 'a@seed.com' ),

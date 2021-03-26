@@ -1,5 +1,5 @@
-const sequelize = require("../../config/connection");
-const { Traveller, Location, Trip } = require("../../models");
+const sequelize = require("../config/connection");
+const { Traveller, Location, Trip } = require("../models");
 
 const demo_travs = require('./demo_travs.json');
 const demo_locs = require('./demo_locs.json');

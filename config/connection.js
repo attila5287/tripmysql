@@ -22,14 +22,10 @@ sequelize = new Sequelize(
 		host: "localhost",
 		dialect: "mysql",
 		port: 3306,
-	}
-);
-	
+	});
+console.log(" > password   : ", process.env.DB_PASSWORD);
+console.log(" > schema: " + process.env.DB_NAME + "(pre-set)");
+console.log(" > username   : ", process.env.DB_USER);	
 }
-
-
-console.log("\t schema: "+ process.env.DB_NAME + "(pre-set)");
-console.log("\t username   : ", process.env.DB_USER);
-console.log("\t password   : ", process.env.DB_PASSWORD);
 
 module.exports = sequelize;

@@ -4,8 +4,16 @@ const router = require('express').Router();
 const { Location, Traveller, Trip } = require("../models");
     
 
-// LANDING
+// test heroku with no db
 router.get("/", async (req, res) => {
+	try {
+		res.status(200).json(['Denver', 'Boulder', 'Pueblo']);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+// LANDING
+router.get("/home", async (req, res) => {
 	try {
 		const locationData = await Location.findAll();
 		res.status(200).json(locationData);

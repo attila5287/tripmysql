@@ -1,6 +1,6 @@
 {
   "name": "tripmysql",
-  "version": "1.0.0",
+  "version": "10.14.0",
   "description": "![globe](https://raw.githubusercontent.com/attila5287/img_readme/main/all/globe_bw.png  \"globe\")| `TripMySQL`\r |---|---|\r  ![h](https://raw.githubusercontent.com/attila5287/img_readme/main/all/h.png  \"globe\") | [tripmysql.herokuapp.com](http://tripmysql.herokuapp.com/)",
   "main": "server.js",
   "scripts": {

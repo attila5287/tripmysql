@@ -6,13 +6,12 @@ const Trip = require("./Trip");
 // FK best option:
 // A.belongsToMany(B, { through: 'C' }); // A BelongsToMany B through the junction table C
 
-
 Traveller.belongsToMany(Location, {
 	through: {
 		model: Trip,
 		unique: false
 	},
-	as: "trips_togo"
+	as: "planned"
 });
 
 Location.belongsToMany(Traveller, {
@@ -20,7 +19,7 @@ Location.belongsToMany(Traveller, {
 		model: Trip,
 		unique: false
 	},
-	as: "trippers_tobe"
+	as: "trips_of"
 });
 
 console.log("\n >> Finalizing DB:\n\t relational database set up! ");

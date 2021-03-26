@@ -2,7 +2,7 @@ use trips;
 
 INSERT INTO location
     (location_name)
-VALUES
+  VALUES
     ('Istanbul'),
     ('Izmir'),
     ('Ankara'),

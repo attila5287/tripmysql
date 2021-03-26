@@ -5,11 +5,9 @@ console.log('\n>> Connecting to DB at:');
 
 let sequelize; // conditionally branched
 
-if (app_on_heroku) {
-process.env.JAWSDB_URL;
-sequelize = new Sequelize(process.env.JAWSDB_URL);
-console.log("\t App runs Heroku:  JawsDB ");
-
+if (process.env.JAWSDB_URL) {
+	sequelize = new Sequelize(process.env.JAWSDB_URL);
+	console.log("\t App runs Heroku:  JawsDB ");
 }
 
 if (!app_on_heroku) {

@@ -5,8 +5,9 @@ const demo_travs = require('./demo_travs.json');
 const demo_locs = require('./demo_locs.json');
 
 const seedDatabase = async () => {
+  // FORCE >> DROP DATABASE IF EXISTS
   await sequelize.sync({ force: true });
-
+  // await sequelize.sync({ force: false });
   const travellers = await Traveller.bulkCreate(demo_travs);
 
   const locations = await Location.bulkCreate(demo_locs);
@@ -14,6 +15,9 @@ const seedDatabase = async () => {
   // Create trips at random
   for (let i = 0; i < 10; i++) {
     // Get a random traveller's `id`
+console.log('randomTravellerId');
+// console.log(randomTravellerId);
+console.log('-----');
     const { id: randomTravellerId } = travellers[
       Math.floor(Math.random() * travellers.length)
     ];

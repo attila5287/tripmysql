@@ -5,7 +5,7 @@ const { Location, Traveller, Trip } = require("../models");
     
 
 // test heroku with no db
-router.get("/", async (req, res) => {
+router.get("/h", async (req, res) => {
 	try {
 		res.status(200).json(['Denver', 'Boulder', 'Pueblo']);
 	} catch (err) {
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 	}
 });
 // LANDING
-router.get("/home", async (req, res) => {
+router.get("/", async (req, res) => {
 	try {
 		const locationData = await Location.findAll();
 		res.status(200).json(locationData);

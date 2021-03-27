@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/attila5287/tripmysql#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "sequelize": "^6.6.2"
   }

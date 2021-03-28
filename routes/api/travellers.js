@@ -16,7 +16,7 @@ router.get("/:id", async (req, res) => {
 	try {
 		const travellerData = await Traveller.findByPk(req.params.id, {
 			// JOIN with locations, using the Trip through table
-			include: [{ model: Location, through: Trip, as: "planned_trips" }]
+			include: [{ model: Location, through: Trip, as: "planned" }]
 		});
 
 		if (!travellerData) {

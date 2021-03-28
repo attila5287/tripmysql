@@ -3,12 +3,11 @@ const router = require('express').Router();
 
 const { Location, Traveller, Trip } = require("../models");
     
-
+const landing = require('./landing');
 // LANDING
 router.get("/", async (req, res) => {
 	try {
-		const locationData = await Location.findAll();
-		res.status(200).json(locationData);
+		res.status(200).json(landing);
 	} catch (err) {
 		res.status(500).json(err);
 	}

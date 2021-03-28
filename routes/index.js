@@ -2,6 +2,9 @@ console.log('\n>> Building app started...');
 const router = require('express').Router();
 
 const { Location, Traveller, Trip } = require("../models");
+const apiRoutes = require("./api");
+
+router.use("/api", apiRoutes);
     
 const landing = require('./landing');
 // LANDING

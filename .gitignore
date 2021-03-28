@@ -103,3 +103,7 @@ dist
 # TernJS port file
 .tern-port
 ASSIGNMENT.MD
+routes/api2/index.js
+routes/api2/locationRoutes.js
+routes/api2/travellerRoutes.js
+routes/api2/tripRoutes.js

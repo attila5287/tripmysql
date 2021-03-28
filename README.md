@@ -2,8 +2,6 @@
 |---|---|
  ![h](https://raw.githubusercontent.com/attila5287/img_readme/main/all/h.png  "globe") | [tripmysql.herokuapp.com](http://tripmysql.herokuapp.com/)
 
-![][3]
-
 ```
 > Create an account.
 > Create a new trip using a location from a list.
@@ -67,4 +65,34 @@ DELETE  | `/api/trips/:id`| removes a trip and returns a successful response in 
 [2]: https://raw.githubusercontent.com/attila5287/img_readme/main/all/sql-icon.png
 
 [3]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/first_response.JPG
+POST methods
+======
+> Insomnia Core to check post methods, captions below:
 
+`/api/locations`
+![post-loc][4]
+`/api/travellers`
+![post-trv][5]
+`/api/trips`
+![post-trip][6]
+
+[4]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/post_location.JPG
+
+[5]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/post_traveller.JPG
+
+[6]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/post_trip.JPG
+
+DELETE methods
+=======
+> Insomnia Core to check delete methods, captions below:
+
+`/api/locations`
+![delete-loc][7]
+`/api/travellers`
+![delete-trv][8]
+`/api/trips`
+![delete-trip][9]
+
+[7]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/delete_location.JPG
+[8]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/delete_traveller.JPG
+[9]: https://raw.githubusercontent.com/attila5287/tripmysql/main/assets/delete_trip.JPG

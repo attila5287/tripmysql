@@ -51,12 +51,17 @@
 <div class="row">
   <div class="col-4">
     <ul id="locations" class="list-group list-group-flush">
-      <li class="list-group-item"></li>
+      <li class="list-group-item bg-primary">Locations</li>
     </ul>
   </div>
   <div class="col-4">
     <ul id="travellers" class="list-group list-group-flush">
-      <li class="list-group-item"></li>
+      <li class="list-group-item bg-primary">Travellers</li>
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul id="trips" class="list-group list-group-flush">
+      <li class="list-group-item bg-primary">Trips</li>
     </ul>
   </div>
 </div>
@@ -75,7 +80,7 @@
 			$("#locations").append(li);
 			li
 				.attr( "class", "list-group-item text-light" )
-        .text(loc.location_name)
+        .text(loc.id +': '+ loc.location_name)
 				;
       
     });
@@ -91,7 +96,23 @@
 			$("#travellers").append(li);
 			li
 				.attr( "class", "list-group-item text-light" )
-        .text(trv.name)
+        .text(trv.id + ': '+trv.name)
+				;
+      
+    });
+  } );
+</script>
+<script>
+  $.ajax( {
+    type: "GET",
+    url: '/api/trips',
+  } ).then( ( trips ) => {
+    trips.forEach(trp => {
+    let li = $("<li>");
+			$("#trips").append(li);
+			li
+				.attr( "class", "list-group-item text-light" )
+        .text(trp.id + '| Loc Id:'+trp.location_id + ' Trv Id: ' + trp.traveller_id)
 				;
       
     });

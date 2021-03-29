@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
+<meta name="Description" content="Form page to add location, traveller, trip"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/darkly/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
+<title>TripMySql</title>
 </head>
 <body>
 <nav class="navbar navbar-expand navbar-light bg-light fixed-top">
@@ -28,31 +27,75 @@
 <div class="row mt-5">
 <div class="col-4">
   <form class="form-group bg-transparent m-3" method="POST" action="/api/locations">
-    <input class="form-control" type="text" id="location_name" name="location_name" placeholder="Location">
-    <input type="submit" value="Add Location" class="btn btn-primary btn-block">
+    <input class="form-control-lg" type="text" id="location_name" name="location_name" placeholder="Location">
+    <input type="submit" value="Add Location" class="btn btn-primary btn-lg btn-block">
   </form>
 </div>  
 <div class="col-4">
   <form class="form-group bg-transparent m-3" method="POST" action="/api/travellers">
-    <input class="form-control" type="text" id="name" name="name" placeholder="Traveller Name">
-    <input class="form-control" type="text" id="email" name="email" placeholder="Traveller Email">
-    <input type="submit" value="Add Traveller" class="btn btn-primary btn-block">
+    <input class="form-control-lg" type="text" id="name" name="name" placeholder="Traveller Name">
+    <input class="form-control-lg" type="text" id="email" name="email" placeholder="Traveller Email">
+    <input type="submit" value="Add Traveller" class="btn btn-primary btn-lg btn-block">
   </form>
   </div>  
 <div class="col-4">
   <form class="form-group bg-transparent m-3" method="POST" action="/api/trips">
-    <input class="form-control" type="text" id="location_id" name="location_id" placeholder="Location Id">
-    <input class="form-control" type="text" id="traveller_id" name="traveller_id" placeholder="Traveller Id">
-    <input class="form-control" type="text" id="trip_budget" name="trip_budget" placeholder="Trip Budget">
-    <input class="form-control" type="text" id="traveller_amount" name="traveller_amount" placeholder="Traveller Amount">
-    <input type="submit" value="Add Traveller" class="btn btn-primary btn-block">
+    <input class="form-control-lg" type="text" id="location_id" name="location_id" placeholder="Location Id">
+    <input class="form-control-lg" type="text" id="traveller_id" name="traveller_id" placeholder="Traveller Id">
+    <input class="form-control-lg" type="text" id="trip_budget" name="trip_budget" placeholder="Trip Budget">
+    <input class="form-control-lg" type="text" id="traveller_amount" name="traveller_amount" placeholder="Traveller Amount">
+    <input type="submit" value="Add Trip" class="btn btn-primary btn-lg btn-block">
   </form>
   </div>  
 </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<div class="row">
+  <div class="col-4">
+    <ul id="locations" class="list-group list-group-flush">
+      <li class="list-group-item"></li>
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul id="travellers" class="list-group list-group-flush">
+      <li class="list-group-item"></li>
+    </ul>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    
+<script>
+  $.ajax( {
+    type: "GET",
+    url: '/api/locations',
+  } ).then( ( locs ) => {
+    console.log('locs :>> ', locs);
+    locs.forEach(loc => {
+    let li = $("<li>");
+			$("#locations").append(li);
+			li
+				.attr( "class", "list-group-item text-light" )
+        .text(loc.location_name)
+				;
+      
+    });
+  } );
+</script>
+<script>
+  $.ajax( {
+    type: "GET",
+    url: '/api/travellers',
+  } ).then( ( travellers ) => {
+    travellers.forEach(trv => {
+    let li = $("<li>");
+			$("#travellers").append(li);
+			li
+				.attr( "class", "list-group-item text-light" )
+        .text(trv.name)
+				;
+      
+    });
+  } );
+</script>
 </body>
 </html>

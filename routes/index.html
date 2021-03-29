@@ -10,15 +10,22 @@
 <title>TripMySql</title>
 </head>
 <body>
-<nav class="navbar navbar-expand navbar-light bg-light fixed-top">
-  <a class="navbar-brand">TripMySQL</a>
+<nav class="navbar navbar-expand navbar-light bg-primary text-light fixed-top">
+  <a class="navbar-brand" href="https://github.com/attila5287/node_js"> 
+    <img alt="@attila5287" src="https://avatars1.githubusercontent.com/u/42498753?s=60&amp;u=739973fd70454aa533c67bccf17b6aeddcc6361f&amp;v=4" class="rounded my-0 py-0" 
+    width= "36" 
+    height="36"
+    >
+     </a>
   <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div id="my-nav" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-light" href="tripmysql.herokuapp.com">
+          <h3>TripMySQL</h3>
+          <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -40,8 +47,10 @@
   </div>  
 <div class="col-4">
   <form class="form-group bg-transparent m-3" method="POST" action="/api/trips">
-    <input class="form-control-lg" type="text" id="location_id" name="location_id" placeholder="Location Id">
-    <input class="form-control-lg" type="text" id="traveller_id" name="traveller_id" placeholder="Traveller Id">
+      <select id="location_id" name="location_id" class="form-control">
+      </select>
+      <select id="traveller_id" name="traveller_id" class="form-control">
+      </select>
     <input class="form-control-lg" type="text" id="trip_budget" name="trip_budget" placeholder="Trip Budget">
     <input class="form-control-lg" type="text" id="traveller_amount" name="traveller_amount" placeholder="Traveller Amount">
     <input type="submit" value="Add Trip" class="btn btn-primary btn-lg btn-block">
@@ -82,9 +91,25 @@
 				.attr( "class", "list-group-item text-light" )
         .text(loc.id +': '+ loc.location_name)
 				;
-      
+			
+      loc.trips_of.forEach(t => {
+      let i = $("<i>");
+        li.append(i);
+        i
+          .attr( "class", "text-muted" )
+          .text(' by '+ ' '+ t.name)
+          ;
+
+      });
     });
-  } );
+    locs.forEach(l => {
+      const opt = $('<option>');
+      $("#location_id").append(opt);
+      opt.attr('value', l.id);
+      opt.text(l.location_name);
+    });
+  } 
+  );
 </script>
 <script>
   $.ajax( {
@@ -98,9 +123,24 @@
 				.attr( "class", "list-group-item text-light" )
         .text(trv.id + ': '+trv.name)
 				;
-      
+      trv.planned.forEach(l => {
+      let i = $("<i>");
+          li.append(i);
+          i
+            .attr( "class", "text-muted" )
+            .text(' to '+ ' '+ l.location_name)
+            ;
+
+        });
     });
-  } );
+    
+    travellers.forEach(t => {
+      const opt = $('<option>')
+      $('#traveller_id').append(opt);
+      opt.attr('value', t.id);
+      opt.text(t.name);
+    });  
+  });
 </script>
 <script>
   $.ajax( {
@@ -112,7 +152,7 @@
 			$("#trips").append(li);
 			li
 				.attr( "class", "list-group-item text-light" )
-        .text(trp.id + '| Loc Id:'+trp.location_id + ' Trv Id: ' + trp.traveller_id)
+        .text(trp.id + '| Loc Id:'+trp.location_id + ' Trv Id: ' + trp.traveller_id + 'Budget: ' + trp.trip_budget + ' Amnt: '+ trp.traveller_amount)
 				;
       
     });

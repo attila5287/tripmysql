@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/darkly/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-light bg-light fixed-top">
+  <a class="navbar-brand">TripMySQL</a>
+  <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<hr class="mt-5">
+<div class="row mt-5">
+<div class="col-4">
+  <form class="form-group bg-transparent m-3" method="POST" action="/api/locations">
+    <input class="form-control" type="text" id="location_name" name="location_name" placeholder="Location">
+    <input type="submit" value="Add Location" class="btn btn-primary btn-block">
+  </form>
+</div>  
+<div class="col-4">
+  <form class="form-group bg-transparent m-3" method="POST" action="/api/travellers">
+    <input class="form-control" type="text" id="name" name="name" placeholder="Traveller Name">
+    <input class="form-control" type="text" id="email" name="email" placeholder="Traveller Email">
+    <input type="submit" value="Add Traveller" class="btn btn-primary btn-block">
+  </form>
+  </div>  
+<div class="col-4">
+  <form class="form-group bg-transparent m-3" method="POST" action="/api/trips">
+    <input class="form-control" type="text" id="location_id" name="location_id" placeholder="Location Id">
+    <input class="form-control" type="text" id="traveller_id" name="traveller_id" placeholder="Traveller Id">
+    <input class="form-control" type="text" id="trip_budget" name="trip_budget" placeholder="Trip Budget">
+    <input class="form-control" type="text" id="traveller_amount" name="traveller_amount" placeholder="Traveller Amount">
+    <input type="submit" value="Add Traveller" class="btn btn-primary btn-block">
+  </form>
+  </div>  
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
